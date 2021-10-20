@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>PlatziMediaPlayer.js</title>
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+    />
+    <link rel="stylesheet" href="./assets/index.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>PlatziMediaPlayer.js</h1>
+      <p>An extensible media player.</p>
+    </header>
+
+    <main class="container">
+      <video class="movie">
+        <source src="./assets/2020-02-22 17.24.28.mp4"/>
+      </video>
+
+      <button>Play/Pause</button>
+
+      
+    </main>
+    <script>
+      const video = document.querySelector("video") 
+      // con esto lo estamos diciendo que caracteristica vamos a modificar
+      const button = document.querySelector("button") // aplicamos lo mismo para el boton
+
+      function mediaPlayer (config) {
+        this.media = config.el
+      }
+
+      mediaPlayer.prototype.play = function() {
+        this.media.play();
+      } 
+
+      mediaPlayer.prototype.pause = function(){
+        this.media.pause();
+      }
+      mediaPlayer.prototype.togglePlay = function(){
+        (this.media.paused)
+        ? this.play()
+        :this.pause();
+      }
+      const player = new mediaPlayer({el: video});
+      button.onclick = () => player.togglePlay(); 
+
+      //button.onclick = () => video.play(); 
+      // cada vez que demos click el se va a reproducir o pausar
+
+    </script>
+  </body>
+</html>

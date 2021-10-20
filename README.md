@@ -1,2 +1,4 @@
+## Bienvenido a este curso
+Aca podras ver todo lo aplicado para el:
 # curso-profesional-de-js
-Aplicacion de todo lo visto en el curso profesional de javascript en platzi
+- En este curso vamos a estar desarrollando una aplicacion llamada: platzi video
